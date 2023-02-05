@@ -1,0 +1,21 @@
+// This will be a program that creats an empty 200 x 200 pixel window
+#include <gtkmm-4.0/gtkmm.h>
+
+class MyWindow : public Gtk::Window
+{
+public:
+  MyWindow();
+};
+
+MyWindow::MyWindow()
+{
+  set_title("Basic application");
+  set_default_size(200, 200);
+}
+
+int main(int argc, char* argv[])
+{
+  auto app = Gtk::Application::create("org.gtkmm.examples.base");
+
+  return app->make_window_and_run<MyWindow>(argc, argv);
+}
