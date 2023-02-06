@@ -20,3 +20,5 @@ The C++ wrapper gets deleted if:
     - The C instance has a floating refrence when the wrapper is created,and
     - Gtk::manage() has not been called on it or
     - Gtk::manage was called on it, but never added or was later removed
+
+Glib::wrap() binds the C and C++ instances to eachother. Dont delete the C++ instance before you want the C instance to die.
